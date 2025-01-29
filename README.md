@@ -1,3 +1,4 @@
-#INFORMACION
+# INFORMACIÓN PERSONAL
 
 **MATRICULA:** 202369964
+**NOMBRE:** Ismael Banderas Barrera
