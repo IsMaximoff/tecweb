@@ -127,6 +127,17 @@
         echo "\$a = $a <br>";
         echo "\$b = $b <br>";
         echo "\$c = $c <br>";
+        /*--------------------------------------------------------------------------------*/
+        // EJERCICIO 6
+        echo "<h2>Ejercicio 6</h2>";
+        $a = "0";
+        $b = "TRUE";
+        $c = FALSE;
+        $d = ($a OR $b);
+        $e = ($a AND $c);
+        $f = ($a XOR $b);
+
+        var_dump((bool)$a, (bool)$b, (bool)$c, (bool)$d, (bool)$e, (bool)$f);
     ?>
 </body>
 </html>
