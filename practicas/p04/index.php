@@ -138,6 +138,12 @@
         $f = ($a XOR $b);
 
         var_dump((bool)$a, (bool)$b, (bool)$c, (bool)$d, (bool)$e, (bool)$f);
+        /*--------------------------------------------------------------------------------*/
+        // EJERCICIO 7
+        echo "<h2>Ejercicio 7</h2>";
+        echo "<strong>Versión de Apache/PHP</strong> ".$_SERVER['SERVER_SOFTWARE']."<br>";
+        echo "<strong>Sistema Operativo del servidor:</strong> ".PHP_OS."<br>";
+        echo "<strong>Idioma del navegador:</strong> ".$_SERVER['HTTP_ACCEPT_LANGUAGE']."<br>";
     ?>
 </body>
 </html>
