@@ -54,7 +54,7 @@
         echo '<h4>Explicación:</h4>';
         echo "<p>Al modificar el valor de \$a, indirectamente modificamos también el valor de \$c, ya que esta variable contiene la referencia de a. Esto mismo sucede con la variable \$b. Entonces como las variables \$b y \$c son referencias de a, terminan mostrando el mismo contenido que \$a</p>";
         /*--------------------------------------------------------------------------------*/
-        // EJERCICIO 3 -
+        // EJERCICIO 3 - Evolución de variables
         echo "<h2>Ejercicio 3</h2>";
         echo "<p>Muestra el contenido de cada variable inmediatamente después de cada aasignación, verificar la evolución de tipo de estas variables (imprime todos los componentes del arreglo):</p>";
 
@@ -86,6 +86,36 @@
         echo "\$z = ";
         print_r($z);
         echo "<br>";
+        /*--------------------------------------------------------------------------------*/
+        // EJERCICIO 4
+        echo "<h2>Ejercicio 4</h2>";
+        echo "<p>Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de la matriz \$GLOBALS o del modificador global de PHP</p>";
+
+        unset($a, $b, $c, $z);
+        $a = "PHP5";
+        $z[] = &$a;
+        $b = "5a version de PHP";
+        @$c = $b * 10;
+        $a .= $b;
+        @$b *= $c;
+        $z[0] = "MySQL";
+        
+        echo "\$a = ";
+        var_dump($GLOBALS['a']);
+        echo "<br>";
+
+        echo "\$z = ";
+        var_dump($GLOBALS['z']);
+        echo "<br>";
+
+        echo "\$b = ";
+        var_dump($GLOBALS['b']);
+        echo "<br>";
+
+        echo "\$c = ";
+        var_dump($GLOBALS['c']);
+        echo "<br>";
+
     ?>
 </body>
 </html>
