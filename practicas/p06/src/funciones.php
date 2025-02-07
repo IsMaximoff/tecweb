@@ -146,4 +146,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <?php
 /*EJERCICIO 4 --------------------------------------------------------------------------------------------------------------*/
+function verificarEdadSexo() {
+    $edad = isset($_POST['edad']) ? (int)$_POST['edad'] : 0;
+    $sexo = isset($_POST['sexo']) ? trim($_POST['sexo']) : "";
+
+    $mensaje = "";
+
+    if ($sexo === "femenino" && $edad >= 18 && $edad <= 35) {
+        $mensaje = "Bienvenida, usted está en el rango de edad permitido";
+    } else {
+        $mensaje = "Lo siento, usted no cumple con los requisitos de edad o sexo";
+    }
+
+    //Respuesta adaptada a html5
+    echo '<!DOCTYPE html>';
+    echo '<html lang="es">';
+    echo '<head><meta charset="UTF-8"><title>Resultado del Ejercicio 5</title></head>';
+    echo '<body>';
+    echo '<h2>Resultado del Ejercicio 5</h2>';
+    echo '<p>' . htmlspecialchars($mensaje) . '</p>';
+    echo '<a href="index.php">Volver al formulario</a>';
+    echo '</body></html>';
+}
 ?>

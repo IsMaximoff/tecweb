@@ -33,5 +33,27 @@
         ASCII_Caracteres();
     ?>
 
+    <h2>Ejercicio 5</h2>
+    <p>Identificar una persona de sexo "femenino" cuya edad oscile entre los 18 y 35 años.</p>
+    <form action="index.php" method="POST">
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" min="0" required /><br /><br />
+
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo" required>
+            <option value="">Seleccione...</option>
+            <option value="femenino">Femenino</option>
+            <option value="masculino">Masculino</option>
+        </select><br /><br />
+
+        <button type="submit">Verificar</button>
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        verificarEdadSexo();
+    }
+    ?>
+
 </body>
 </html>
