@@ -82,3 +82,68 @@
         
     }
 ?>
+
+<?php
+/*EJERCICIO 4 --------------------------------------------------------------------------------------------------------------*/
+    function ASCII_Caracteres() {
+        $arreglo = array();
+        for ($i = 97; $i <= 122; $i++) {
+            $arreglo[$i] = chr($i);
+        }
+
+        echo "<table border = '1' cellspacing = '0' cellpading = '5'>"; 
+        echo "<tr> <th>ASCII</th> <th>Caracter</th> </tr>";
+
+        foreach($arreglo as $key => $value) {
+            echo "<tr>";
+            echo "<td>$key</td>";
+            echo "<td>$value</td>";
+            echo "</tr>";
+        }
+
+        echo "</table>";
+    }    
+?>
+
+<?php
+// Verifica si el formulario fue enviado vía POST.
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Se obtienen los datos enviados desde el formulario.
+    $edad = isset($_POST['edad']) ? (int) $_POST['edad'] : 0;
+    $sexo = isset($_POST['sexo']) ? trim($_POST['sexo']) : "";
+
+    // Verifica que se haya ingresado el sexo y la edad.
+    if ($sexo === "" || $edad === 0) {
+        $mensaje = "Por favor, ingrese datos válidos.";
+    } else {
+        // Evaluar si es una mujer (femenino) en el rango de edad 18 a 35.
+        if ($sexo === "femenino" && $edad >= 18 && $edad <= 35) {
+            $mensaje = "Bienvenida, usted está en el rango de edad permitido.";
+        } else {
+            $mensaje = "Lo siento, usted no cumple con los requisitos de edad o sexo.";
+        }
+    }
+
+    // Generar la respuesta XHTML.
+    // IMPORTANTE: En documentos XHTML, se recomienda incluir la declaración XML y el DOCTYPE.
+    echo '<?xml version="1.0" encoding="UTF-8"?>'; 
+    ?>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+      "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+        <title>Respuesta</title>
+      </head>
+      <body>
+        <h2>Resultado</h2>
+        <p><?php echo $mensaje; ?></p>
+      </body>
+    </html>
+    <?php
+    exit(); // Finaliza la ejecución, ya que ya se mostró la respuesta.
+}
+?>
+
+<?php
+/*EJERCICIO 4 --------------------------------------------------------------------------------------------------------------*/
+?>
