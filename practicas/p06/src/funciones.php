@@ -49,3 +49,36 @@
         echo "<p>$numGenerados números obtenidos en $iteraciones iteraciones </p>";
     }
 ?>
+
+<?php
+/*EJERCICIO 3 --------------------------------------------------------------------------------------------------------------*/
+    function multiplo_While()
+    {
+        $divisor = (int) $_GET['numero'];
+        $iteracion = 0;
+        $numeroRand = rand(1, 1000);
+
+        while($numeroRand % $divisor !== 0) {
+            $iteracion++;
+            $numeroRand = rand(1, 1000);
+        }
+        $iteracion++;
+        echo "<p>USANDO WHILE: Se encontró el número random $numeroRand como divisor de $divisor en $iteracion iteraciones</p>";
+        
+    }
+
+    function multiplo_DoWhile()
+    {
+        $divisor = (int) $_GET['numero'];
+        $iteracion = 0;
+
+        do{
+            $numeroRand = rand(1, 1000);
+            $iteracion++;
+        }while($numeroRand % $divisor !== 0);
+
+        $iteracion++;
+        echo "<p>USANDO DO-WHILE: Se encontró el número random $numeroRand como divisor de $divisor en $iteracion iteraciones</p>";
+        
+    }
+?>
