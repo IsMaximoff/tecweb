@@ -9,14 +9,14 @@
     <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7</p>
     <?php include 'src/funciones.php'; ?>
     
+    <h2>Ejercicio 2</h2>
+    <p>Crea un programa para la generación repetitiva de 3 números aleatorios hasta obtener una
+    secuencia compuesta por: impar, par, impar <br> Estos números deben almacenarse en una matriz de Mx3, donde M es el número de filas y
+    3 el número de columnas. Al final muestra el número de iteraciones y la cantidad de
+    números generados:</p>
+    <?php
+        secuenciaImparParImpar();
+    ?>
 
-    <h2>Ejemplo de POST</h2>
-    <form action="http://localhost/tecweb/practicas/p06/index.php" method="post">
-        Name: <input type="text" name="name"><br>
-        E-mail: <input type="text" name="email"><br>
-        <input type="submit">
-    </form>
-    <br>
-   
 </body>
 </html>
