@@ -12,7 +12,7 @@
         }
     }
 ?>
-
+<
 
 <?php
 /*EJERCICIO 2 --------------------------------------------------------------------------------------------------------------*/
@@ -145,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 
 <?php
-/*EJERCICIO 4 --------------------------------------------------------------------------------------------------------------*/
+/*EJERCICIO 5 --------------------------------------------------------------------------------------------------------------*/
 function verificarEdadSexo() {
     $edad = isset($_POST['edad']) ? (int)$_POST['edad'] : 0;
     $sexo = isset($_POST['sexo']) ? trim($_POST['sexo']) : "";
@@ -167,5 +167,213 @@ function verificarEdadSexo() {
     echo '<p>' . htmlspecialchars($mensaje) . '</p>';
     echo '<a href="index.php">Volver al formulario</a>';
     echo '</body></html>';
+}
+?>
+
+<?php
+$autos = [
+    "RAU653B" => [
+        "Auto" => [
+            "marca" => "POLO",
+            "modelo" => 2018,
+            "tipo" => "Hatchback"
+        ],
+        "Propietario" => [
+            "nombre" => "Ismael Banderas",
+            "ciudad" => "Tlayacapan, Mor.",
+            "direccion" => "Barrio del Rosario"
+        ]
+    ],
+    "BCD2345" => [
+        "Auto" => [
+            "marca" => "MAZDA",
+            "modelo" => 2024,
+            "tipo" => "Sedan"
+        ],
+        "Propietario" => [
+            "nombre" => "Luis Banderas",
+            "ciudad" => "Coyoacán, CDMX.",
+            "direccion" => "San Antonio Abad"
+        ]
+    ],
+    "CDE3456" => [
+        "Auto" => [
+            "marca" => "JETTA",
+            "modelo" => 2013,
+            "tipo" => "Sedan"
+        ],
+        "Propietario" => [
+            "nombre" => "Omar Tepanohaya",
+            "ciudad" => "Tlayacapan, Mor.",
+            "direccion" => "Santa Ana"
+        ]
+    ],
+    "DEF4567" => [
+        "Auto" => [
+            "marca" => "CHEVY",
+            "modelo" => 2005,
+            "tipo" => "Sedan"
+        ],
+        "Propietario" => [
+            "nombre" => "Alfredo Banderas",
+            "ciudad" => "Tlayacapan, Mor.",
+            "direccion" => "Barrio del Rosario"
+        ]
+    ],
+    "EFG5678" => [
+        "Auto" => [
+            "marca" => "VOLKSWAGEN",
+            "modelo" => 2020,
+            "tipo" => "Pick-up"
+        ],
+        "Propietario" => [
+            "nombre" => "Gabriela Barrera",
+            "ciudad" => "Tlayacapan, Mor.",
+            "direccion" => "Barrio del Rosario"
+        ]
+    ],
+    "FGH6789" => [
+        "Auto" => [
+            "marca" => "JETTA",
+            "modelo" => 2016,
+            "tipo" => "Sedan"
+        ],
+        "Propietario" => [
+            "nombre" => "Arturo Tepanohaya",
+            "ciudad" => "Tlayacapan, Mor.",
+            "direccion" => "Santa Ana"
+        ]
+    ],
+    "GHI7890" => [
+        "Auto" => [
+            "marca" => "FORD",
+            "modelo" => 1985,
+            "tipo" => "Pick-up"
+        ],
+        "Propietario" => [
+            "nombre" => "Pablo Tepanohaya (Chon pavo)",
+            "ciudad" => "Tlayacapan, Mor.",
+            "direccion" => "Santa Ana"
+        ]
+    ],
+    "HIJ8901" => [
+        "Auto" => [
+            "marca" => "CHEVY",
+            "modelo" => 2015,
+            "tipo" => "Pick-up"
+        ],
+        "Propietario" => [
+            "nombre" => "Trinidad Banderas",
+            "ciudad" => "Tlayacapan, Mor.",
+            "direccion" => "Barrio de Texcalpan"
+        ]
+    ],
+    "IJK9012" => [
+        "Auto" => [
+            "marca" => "TOYOTA",
+            "modelo" => 2000,
+            "tipo" => "Sedan"
+        ],
+        "Propietario" => [
+            "nombre" => "Misaki Mei",
+            "ciudad" => "Tokyo, Japon",
+            "direccion" => "Conichiwa"
+        ]
+    ],
+    "JKL0123" => [
+        "Auto" => [
+            "marca" => "FERRARI",
+            "modelo" => 2025,
+            "tipo" => "Sedan"
+        ],
+        "Propietario" => [
+            "nombre" => "YERI MUA (la que trae los chacales por detrás)",
+            "ciudad" => "Xalapa, Veracruj",
+            "direccion" => "Calle Camaron"
+        ]
+    ],
+    "KLM1234" => [
+        "Auto" => [
+            "marca" => "CHEVROLET",
+            "modelo" => 1999,
+            "tipo" => "Hatchback"
+        ],
+        "Propietario" => [
+            "nombre" => "Claudia Sheinbaum",
+            "ciudad" => "Ciudad de México, CDMX",
+            "direccion" => "Calle 3444 Reforma 0"
+        ]
+    ],
+    "LMN2345" => [
+        "Auto" => [
+            "marca" => "VOLKSWAGEN",
+            "modelo" => 3005,
+            "tipo" => "Hatchback"
+        ],
+        "Propietario" => [
+            "nombre" => "Hatsune Miku",
+            "ciudad" => "Futurama, Japón",
+            "direccion" => "Konichiwa"
+        ]
+    ],
+    "MNO3456" => [
+        "Auto" => [
+            "marca" => "VOLKSWAGEN",
+            "modelo" => 2000,
+            "tipo" => "Sedan"
+        ],
+        "Propietario" => [
+            "nombre" => "Laufey",
+            "ciudad" => "Guadalajara, Jalisco",
+            "direccion" => "Calle 24"
+        ]
+    ],
+    "NOP4567" => [
+        "Auto" => [
+            "marca" => "MAZDA",
+            "modelo" => 2025,
+            "tipo" => "Hatchback"
+        ],
+        "Propietario" => [
+            "nombre" => "Olivia Rodrigo",
+            "ciudad" => "Puebla, Pue.",
+            "direccion" => "Circunvalación"
+        ]
+    ],
+    "OPQ5678" => [
+        "Auto" => [
+            "marca" => "CHEVY",
+            "modelo" => 1990,
+            "tipo" => "Sedan"
+        ],
+        "Propietario" => [
+            "nombre" => "Kinich F.",
+            "ciudad" => "Tribu Bosque",
+            "direccion" => "Natlan, Teyvat"
+        ]
+    ]
+];
+
+/**
+ * Busca un auto por su matrícula.
+ * @param string $matricula La matrícula a buscar (en mayúsculas).
+ * @return mixed El registro del auto o un mensaje de error.
+ */
+function buscarAutoPorMatricula($matricula) {
+    global $autos;
+    if (isset($autos[$matricula])) {
+        return $autos[$matricula];
+    } else {
+        return "No se encontró el auto con matrícula: $matricula";
+    }
+}
+
+/**
+ * Retorna todos los autos registrados.
+ * @return array El arreglo completo de autos.
+ */
+function obtenerTodosLosAutos() {
+    global $autos;
+    return $autos;
 }
 ?>

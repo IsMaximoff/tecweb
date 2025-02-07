@@ -34,14 +34,15 @@
     ?>
 
     <h2>Ejercicio 5</h2>
-    <p>Identificar una persona de sexo "femenino" cuya edad oscile entre los 18 y 35 años.</p>
+    <p>Usar las variables $edad y $sexo en una instrucción if para identificar una persona de sexo “femenino”, cuya edad oscile entre los 18 y 35 años y mostrar un mensaje de
+        bienvenida apropiado. Por ejemplo: Bienvenida, usted está en el rango de edad permitido. En caso contrario, deberá devolverse otro mensaje indicando el error.</p>
     <form action="index.php" method="POST">
         <label for="edad">Edad:</label>
         <input type="number" id="edad" name="edad" min="0" required /><br /><br />
 
         <label for="sexo">Sexo:</label>
         <select id="sexo" name="sexo" required>
-            <option value="">Seleccione...</option>
+            <option value="">Seleccione</option>
             <option value="femenino">Femenino</option>
             <option value="masculino">Masculino</option>
         </select><br /><br />
@@ -54,6 +55,27 @@
         verificarEdadSexo();
     }
     ?>
+
+<h2>Ejercicio 6</h2>
+    <p>
+        Crea en código duro un arreglo asociativo que sirva para registrar el parque vehicular de una ciudad.
+        Cada registro se identifica por la matrícula (formato LLLNNNN) y contiene los datos del Auto y del Propietario.
+    </p>
+    <h2>Resultado Ejercicio 6</h2>
+         <?php
+         if (isset($_GET['matricula']) && !empty($_GET['matricula'])) {
+              $matricula = strtoupper(trim($_GET['matricula']));
+              $resultado = buscarAutoPorMatricula($matricula);
+              echo "<h3>Resultado de la búsqueda:</h3>";
+              echo "<pre>" . print_r($resultado, true) . "</pre>";
+         } elseif (isset($_GET['todos'])) {
+              $resultado = obtenerTodosLosAutos();
+              echo "<h3>Todos los autos:</h3>";
+              echo "<pre>" . print_r($resultado, true) . "</pre>";
+         }
+         ?>
+         <p><a href="index.php">Volver al formulario</a></p>
+    </form>
 
 </body>
 </html>
