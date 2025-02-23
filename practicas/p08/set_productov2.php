@@ -51,8 +51,15 @@ if ($stmt->num_rows > 0) {
 
 $stmt->close();
 
+//QUERY DE INSERCIÓN COMENTADA (PUNTO 6)
 /*Insertar el producto */
-$sql_insert = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen) VALUES (?, ?, ?, ?, ?, ?, ?)";
+//$sql_insert = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen, eliminado) VALUES (?, ?, ?, ?, ?, ?, ?, 0)";
+//$stmt = $link->prepare($sql_insert);
+//$stmt->bind_param("sssdsis", $nombre, $marca, $modelo, $precio, $detalles, $unidades, $ruta_imagen);
+
+/* NUEVA QUERY DE INSERCIÓN */
+$sql_insert = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen)
+               VALUES (?, ?, ?, ?, ?, ?, ?)";
 $stmt = $link->prepare($sql_insert);
 $stmt->bind_param("sssdsis", $nombre, $marca, $modelo, $precio, $detalles, $unidades, $ruta_imagen);
 
