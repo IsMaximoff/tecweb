@@ -143,6 +143,22 @@ function ejemplo_9() {
     document.getElementById("ejemplo_9").innerHTML = "El fondo ha cambiado a " + color + ".";
 }
 
+function ejemplo_10() {
+    var x = 1;
+    var suma = 0;
+    var valor;
+
+    while (x <= 5) {
+        valor = prompt('Ingresa el valor:', '');
+        valor = parseInt(valor);
+
+        suma = suma + valor;
+        x = x + 1;
+    }
+
+    document.getElementById("ejemplo_10").innerHTML = "La suma de los valores es: " + suma + ".";
+}
+
 
 /*function getDatos()
 {
