@@ -94,6 +94,34 @@ function ejemplo_7() {
     document.getElementById("ejemplo_7").innerHTML = "Promedio: " + promedio + ", Resultado: " + resultado;
 }
 
+function ejemplo_8() {
+    var valor = prompt("Ingresa un valor comprendido entre 1 y 5:", "");
+    valor = parseInt(valor);
+
+    var resultado = "";
+    switch (valor) {
+        case 1:
+            resultado = 'uno';
+            break;
+        case 2:
+            resultado = "dos";
+            break;
+        case 3:
+            resultado = "tres";
+            break;
+        case 4:
+            resultado = "cuatro";
+            break;
+        case 5:
+            resultado = "cinco";
+            break;
+        default:
+            resultado = "Debe ingresar un valor comprendido entre 1 y 5.";
+    }
+
+    document.getElementById("ejemplo_8").innerHTML = resultado;
+}
+
 
 /*function getDatos()
 {
