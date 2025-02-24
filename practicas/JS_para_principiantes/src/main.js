@@ -12,6 +12,14 @@ function ejemplo_2(){
     document.getElementById("ejemplo_2").innerHTML = resultado;
 }
 
+function ejemplo_3() {
+    let nombre = prompt("Ingresa tu nombre:", "");
+    let edad = prompt("Ingresa tu edad:", "");
+
+    let resultado = `Hola ${nombre}, así que tienes ${edad} años.`;
+    document.getElementById("ejemplo_3").innerHTML = resultado;
+}
+
 
 
 /*function getDatos()
