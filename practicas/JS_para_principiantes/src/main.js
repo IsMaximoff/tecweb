@@ -2,6 +2,15 @@ function ejemplo_1(){
     document.getElementById("ejemplo_1").innerText = "Hola Mundo"; 
 }
 
+function ejemplo_2(){
+    let nombre = 'Juan';
+    let edad = 10;
+    let altura = 1.92;
+    let casado = false;
+
+    let resultado = `${nombre}<br>${edad}<br>${altura}<br>${casado}`;
+    document.getElementById("ejemplo_2").innerHTML = resultado;
+}
 
 
 
