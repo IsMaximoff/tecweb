@@ -205,6 +205,12 @@ function ejemplo_14() {
     document.getElementById('ejemplo_14').innerHTML = resultado;
 }
 
+function ejemplo_15() {
+    const mensajeEnDiv = document.getElementById("ejemplo_15");
+    const mensaje = "Cuidado <br> Ingresa tu documento correctamente <br>";
+    mensajeEnDiv.innerHTML += mensaje.repeat(3);
+}
+
 
 /*function getDatos()
 {
