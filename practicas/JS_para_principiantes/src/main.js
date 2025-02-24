@@ -211,6 +211,22 @@ function ejemplo_15() {
     mensajeEnDiv.innerHTML += mensaje.repeat(3);
 }
 
+function ejemplo_16() {
+    let valor1 = prompt("Ingresa el valor inferior:", "");
+    valor1 = parseInt(valor1);
+
+    let valor2 = prompt("Ingresa el valor superior", "");
+    valor2 = parseInt(valor2);
+
+    let resultado = "";
+
+    for (let inicio = valor1; inicio <= valor2; inicio++) {
+        resultado += inicio + " ";
+    }
+
+    document.getElementById("ejemplo_16").innerHTML = resultado;
+}
+
 
 /*function getDatos()
 {
