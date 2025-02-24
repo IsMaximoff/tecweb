@@ -20,6 +20,25 @@ function ejemplo_3() {
     document.getElementById("ejemplo_3").innerHTML = resultado;
 }
 
+function ejemplo_4() {
+    let valor1 = prompt("Introducir primer número:", "");
+    let valor2 = prompt("Introducir segundo número:", "");
+
+    let num1 = parseInt(valor1);
+    let num2 = parseInt(valor2);
+
+    if (isNaN(num1) || isNaN(num2)) {
+        alert ("Por favor, ingresa valores numéricos válidos.");
+        return;
+    }
+
+    let suma = num1 + num2;
+    let producto = num1 * num2;
+
+    let resultado = `La suma es ${suma} <br> El producto es ${producto}`;
+    document.getElementById("ejemplo_4").innerHTML = resultado;
+}
+
 
 
 /*function getDatos()
