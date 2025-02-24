@@ -159,6 +159,15 @@ function ejemplo_10() {
     document.getElementById("ejemplo_10").innerHTML = "La suma de los valores es: " + suma + ".";
 }
 
+function ejemplo_11() {
+    var x = 1;
+
+    while (x <= 100) {
+        document.write(x + '<br>');
+        x += 1;
+    }
+}
+
 
 /*function getDatos()
 {
