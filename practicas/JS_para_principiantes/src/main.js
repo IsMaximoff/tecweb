@@ -45,11 +45,6 @@ function ejemplo_5() {
 
     let notaNum = parseFloat(nota);
 
-    if (isNaN(notaNum)) {
-        alert("Por favor, ingresa una nota válida.");
-        return;
-    }
-
     let resultado = "";
     if (notaNum >= 4) {
         resultado = `${nombre} está probado con un ${notaNum}`;
@@ -58,6 +53,22 @@ function ejemplo_5() {
     }
 
     document.getElementById("ejemplo_5").innerHTML = resultado;
+}
+
+function ejemplo_6() {
+    var num1 = prompt("Ingresa el primer número:", "");
+    var num2 = prompt("Ingresa el segundo número", "");
+
+    num1 = parseInt(num1);
+    num2 = parseInt(num2);
+
+    let resultado = "";
+    if (num1 > num2) {
+        resultado = `El mayor es ${num1}`;
+    } else {
+        resultado = `El mayor es ${num2}`;
+    }
+    document.getElementById("ejemplo_6").innerHTML = resultado;
 }
 
 
