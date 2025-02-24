@@ -189,6 +189,14 @@ function ejemplo_12() {
     } while (valor != 0);
 }
 
+function ejemplo_13() {
+    var f;
+
+    for (f = 1; f <= 10; f++) {
+        document.write(f + " ");
+    }
+}
+
 
 /*function getDatos()
 {
