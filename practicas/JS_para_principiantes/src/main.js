@@ -197,6 +197,14 @@ function ejemplo_13() {
     }
 }
 
+function ejemplo_14() {
+    var resultado = "";
+    for (var i = 0; i < 3; i++) {
+        resultado += "Cuidado<br>Ingresa tu documento correctamente<br>";
+    }
+    document.getElementById('ejemplo_14').innerHTML = resultado;
+}
+
 
 /*function getDatos()
 {
