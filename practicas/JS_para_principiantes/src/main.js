@@ -227,6 +227,28 @@ function ejemplo_16() {
     document.getElementById("ejemplo_16").innerHTML = resultado;
 }
 
+function ejemplo_17() {
+    let valor = prompt("Ingresa un valor entre 1 y 5", "");
+    valor = parseInt(valor);
+
+    let resultado;
+    if (valor == 1) {
+        resultado = "uno";
+    } else if (valor == 2) {
+        resultado = "dos";
+    } else if (valor == 3) {
+        resultado = "tres";
+    } else if (valor == 4) {
+        resultado = "cuatro";
+    } else if (valor == 5) {
+        resultado = "cinco";
+    } else {
+        resultado = "valor incorrecto";
+    }
+
+    document.getElementById("ejemplo_17").innerHTML = resultado;
+}
+
 
 /*function getDatos()
 {
