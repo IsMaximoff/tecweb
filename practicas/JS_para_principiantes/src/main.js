@@ -101,7 +101,7 @@ function ejemplo_8() {
     var resultado = "";
     switch (valor) {
         case 1:
-            resultado = 'uno';
+            resultado = "uno";
             break;
         case 2:
             resultado = "dos";
@@ -120,6 +120,27 @@ function ejemplo_8() {
     }
 
     document.getElementById("ejemplo_8").innerHTML = resultado;
+}
+
+function ejemplo_9() {
+    var color = prompt("Ingresa el color con que quieres pintar el fondo de la ventana (rojo, verde, azul)", "");
+
+    switch (color.toLowerCase()) {
+        case 'rojo':
+            document.bgColor = '#ff0000';
+            break;
+        case 'verde':
+            document.bgColor = '#00ff00';
+            break;
+        case 'azul':
+            document.bgColor = '#0000ff';
+            break;
+        default:
+            document.getElementById("ejemplo_9").innerHTML = "Color no válido";
+            return;
+    }
+
+    document.getElementById("ejemplo_9").innerHTML = "El fondo ha cambiado a " + color + ".";
 }
 
 
