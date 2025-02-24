@@ -1,4 +1,11 @@
-function getDatos()
+function ejemplo_1(){
+    document.getElementById("ejemplo_1").innerText = "Hola Mundo"; 
+}
+
+
+
+
+/*function getDatos()
 {
     var nombre = prompt("Nombre: ", "");
 
@@ -9,4 +16,4 @@ function getDatos()
 
     var div2 = document.getElementById('edad');
     div2.innerHTML = '<h3> Edad: '+edad+'</h3>';
-}
+}*/
