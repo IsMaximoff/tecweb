@@ -39,6 +39,27 @@ function ejemplo_4() {
     document.getElementById("ejemplo_4").innerHTML = resultado;
 }
 
+function ejemplo_5() {
+    let nombre = prompt("Ingresa tu nombre:", "");
+    let nota = prompt("Ingresa tu nota", "");
+
+    let notaNum = parseFloat(nota);
+
+    if (isNaN(notaNum)) {
+        alert("Por favor, ingresa una nota válida.");
+        return;
+    }
+
+    let resultado = "";
+    if (notaNum >= 4) {
+        resultado = `${nombre} está probado con un ${notaNum}`;
+    } else {
+        resultado = `${nombre} no ha aprobado. Su nota es ${notaNum}`;
+    }
+
+    document.getElementById("ejemplo_5").innerHTML = resultado;
+}
+
 
 
 /*function getDatos()
