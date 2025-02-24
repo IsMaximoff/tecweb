@@ -71,6 +71,28 @@ function ejemplo_6() {
     document.getElementById("ejemplo_6").innerHTML = resultado;
 }
 
+function ejemplo_7() {
+    var nota1 = prompt("Ingresa 1ra nota:", "");
+    var nota2 = prompt("Ingresa 2da nota:", "");
+    var nota3 = prompt("Ingresa 3ra nota:", "");
+
+    nota1 = parseInt(nota1);
+    nota2 = parseInt(nota2);
+    nota3 = parseInt(nota3);
+
+    var promedio = (nota1 + nota2 + nota3) / 3;
+
+    var resultado = "";
+    if (promedio >= 7) {
+        resultado = 'Aprobado';
+    } else if (promedio >=4) {
+        resultado = 'Regular';
+    } else {
+        resultado = 'Reprobado';
+    }
+
+    document.getElementById("ejemplo_7").innerHTML = "Promedio: " + promedio + ", Resultado: " + resultado;
+}
 
 
 /*function getDatos()
