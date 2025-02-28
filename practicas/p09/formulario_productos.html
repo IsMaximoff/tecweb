@@ -1,0 +1,108 @@
+<!DOCTYPE html >
+<html>
+
+  <head>
+    <meta charset="utf-8" >
+    <title>Registro de Productos</title>
+    <style>
+        ol, ul { list-style-type: none; }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("formularioProductos").addEventListener("submit", function(event) {
+                let valido = true;
+
+                /// Validación del nombre 
+                let nombre = document.getElementById("nombre").value.trim();
+                if (nombre === "" || nombre.lenght > 100) {
+                    alert ("El nombre es requerido y debe tener un maximo de 100 caracteres");
+                    valido = false;
+                }
+
+                ///Validación de la marca
+                let marca = document.getElementById("marca").value.trim();
+                if (marca === "" ) {
+                    alert("Por favor, seleccione una de las marcas");
+                    valido = false;
+                }
+
+                ///Validación del modelo
+                let modelo = document.getElementById("modelo").value.trim();
+                if (modelo === "" || !/^[a-zA-Z0-9]+$/.test(modelo) || modelo.length > 25) {
+                    alert ("El modelo es requerido, debe ser alfanumerico y no debe ser mayor a 25 caracteres");
+                    valido = false;
+                }
+
+                ///Validación del precio
+                let precio = parseFloat(document.getElementById("precio").value);
+                if(isNan(precio) || precio <= 99.99) {
+                    alert ("El precio es requerido y debe ser mayor a 99.99");
+                    valido = false;
+                }
+
+                ///Validacion de los detalles
+                let detalles = document.getElementById("detalles").value.trim();
+                if(detalles.length > 250) {
+                    alert ("Demasiados detalles!. No puedes agregar mas de 250 caracteres en los detalles");
+                    valido = false;
+                }
+
+                ///Validación de unidades
+                let unidades = parseInt(document.getElementById("unidades").value);
+                if (isNaN(unidades)) {
+                    alert ("Debes poner la cantidad de unidades disponibles!");
+                    valido = false;
+                } else if (unidades <= 0) {
+                    alert ("Las unidades del producto deben ser mayores a 0!");
+                    valido = false;
+                }
+
+                ///Validación de imagen
+                let imagen = document.getElementById("imagen");
+                if (imagen.files.length === 0) {
+                    alert ("No se seleccionó ninguna imagen!. Se usara la imagen por defecto")
+                }
+
+                if (!valido) {
+                    event.preventDefault();
+                }
+            })
+        })
+    </script>
+
+  </head>
+
+  <body>
+    <h1>Registro de productos</h1>
+
+    <form id="formularioProductos" action="set_productov2.php" method="post" enctype="multipart/form-data" >
+      <fieldset>
+        <legend>Datos del producto</legend>
+
+        <ul>
+            <li><label for="nombre">Nombre:</label> <input type="text" name="nombre" id="nombre" required></li>
+            <li><label for="marca">Marca:</label> <select name="marca" id="marca" required>
+                <option value="">Seleccione una marca</option>
+                <option value="Editorial Planeta">Editorial Planeta</option>
+                <option value="Penguin Random House">Penguin Random House</option>
+                <option value="HarperCollins">HarperCollins</option>
+                <option value="Santillana">Santillana</option>
+            </select></li>    
+            <li><label for="modelo">Modelo:</label> <input type="text" name="modelo" id="modelo" required></li>
+            <li><label for="precio">Precio::</label> <input type="number" name="precio" id="precio" step="0.01" required></li>
+            <li><label for="detalles">Detalles:</label> <input type="text" name="detalles" id="detalles"required></li>
+            <li><label for="unidades">Unidades:</label> <input type="number" name="unidades" id="unidades"required></li>
+            <li><label for="imagen">Imagen:</label> <input type="file" name="imagen" id="imagen" accept="image/*"></li>
+        </ul>
+      </fieldset>
+    
+
+      <p>
+        <input type="submit" value="Guardar producto">
+        <input type="reset" value="Limpiar">
+      </p>
+
+    </form>
+  </body>
+</html>
