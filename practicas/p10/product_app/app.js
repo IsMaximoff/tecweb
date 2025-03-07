@@ -60,31 +60,49 @@ function buscarID(e) {
     client.send("id="+id);
 }
 
-// FUNCIÓN CALLBACK DE BOTÓN "Agregar Producto"
-function agregarProducto(e) {
-    e.preventDefault();
+/// AGREGACIÓN DE NUEVO PRODUCTO ----------------------------- ///
+function agregarProducto(evento) {
+    evento.preventDefault();
 
-    // SE OBTIENE DESDE EL FORMULARIO EL JSON A ENVIAR
-    var productoJsonString = document.getElementById('description').value;
-    // SE CONVIERTE EL JSON DE STRING A OBJETO
-    var finalJSON = JSON.parse(productoJsonString);
-    // SE AGREGA AL JSON EL NOMBRE DEL PRODUCTO
-    finalJSON['nombre'] = document.getElementById('name').value;
-    // SE OBTIENE EL STRING DEL JSON FINAL
-    productoJsonString = JSON.stringify(finalJSON,null,2);
+    const nombreProducto = document.getElementById("name").value.trim();
+    const jsonInput = document.getElementById("description").value.trim();
 
-    // SE CREA EL OBJETO DE CONEXIÓN ASÍNCRONA AL SERVIDOR
-    var client = getXMLHttpRequest();
-    client.open('POST', './backend/create.php', true);
-    client.setRequestHeader('Content-Type', "application/json;charset=UTF-8");
-    client.onreadystatechange = function () {
-        // SE VERIFICA SI LA RESPUESTA ESTÁ LISTA Y FUE SATISFACTORIA
-        if (client.readyState == 4 && client.status == 200) {
-            console.log(client.responseText);
-        }
-    };
-    client.send(productoJsonString);
+    // Verificar si los campos están vacíos
+    if (!nombreProducto || !jsonInput) {
+        return alert("Todos los campos son obligatorios");
+    }
+
+    // Intentar convertir el texto JSON a un objeto
+    let productoObj;
+    try {
+        productoObj = JSON.parse(jsonInput);
+    } catch (error) {
+        return alert("Error en el formato Json");
+    }
+
+    // Verificar si el JSON contiene las claves necesarias
+    if (!productoObj.marca || !productoObj.modelo || !productoObj.detalles) {
+        return alert("El JSON debe contener 'marca', 'modelo' y 'detalles'");
+    }
+
+    // Agregar el nombre al objeto producto
+    productoObj.nombre = nombreProducto;
+
+    // Enviar el objeto al servidor
+    fetch("backend/create.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(productoObj)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.mensaje); // Mostrar el mensaje de éxito o error
+    })
+    .catch(error => console.error("Error:", error));
 }
+
 
 // SE CREA EL OBJETO DE CONEXIÓN COMPATIBLE CON EL NAVEGADOR
 function getXMLHttpRequest() {

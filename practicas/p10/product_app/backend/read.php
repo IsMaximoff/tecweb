@@ -8,13 +8,11 @@
     if( isset($_POST['busqueda']) ) {
         $busqueda = $conexion->real_escape_string($_POST['busqueda']); // Evita inyección SQL
 
-        // SE REALIZA LA QUERY DE BÚSQUEDA UTILIZANDO LIKE EN VARIOS CAMPOS
+        // SE REALIZA LA QUERY DE BÚSQUEDA UTILIZANDO LIKE PARA ENCONTRAR TAMBIEN RESULTADOS SIMILARES
         $query = "SELECT * FROM productos WHERE nombre LIKE '%$busqueda%' OR marca LIKE '%$busqueda%' OR detalles LIKE '%$busqueda%'";
 
         if ($result = $conexion->query($query)) {
-            // SE OBTIENEN LOS RESULTADOS
             while ($row = $result->fetch_assoc()) {
-                // SE AGREGA CADA FILA AL ARREGLO DE RESPUESTA
                 $data[] = $row;
             }
             $result->free();
