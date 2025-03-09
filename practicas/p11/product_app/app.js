@@ -156,12 +156,31 @@ function agregarProducto(e) {
     // SE OBTIENE EL STRING DEL JSON FINAL
     productoJsonString = JSON.stringify(finalJSON,null,2);
 
-/**
- * AQUÍ DEBES AGREGAR LAS VALIDACIONES DE LOS DATOS EN EL JSON
- * ...
- * 
- * --> EN CASO DE NO HABER ERRORES, SE ENVIAR EL PRODUCTO A AGREGAR
- */
+// AQUÍ DEBES AGREGAR LAS VALIDACIONES DE LOS DATOS EN EL JSON
+ 
+    // EXTRAIDO DE LA PRÁCTICA ANTERIOR
+    const nombreProducto = document.getElementById("name").value.trim();
+    const jsonInput = document.getElementById("description").value.trim();
+
+    // Verificar si los campos están vacíos
+    if (!nombreProducto || !jsonInput) {
+        return alert("Todos los campos son obligatorios");
+    }
+
+    // Intentar convertir el texto JSON a un objeto
+    let productoObj;
+    try {
+        productoObj = JSON.parse(jsonInput);
+    } catch (error) {
+        return alert("Error en el formato Json");
+    }
+
+    // Verificar si el JSON contiene las claves necesarias
+    if (!productoObj.marca || !productoObj.modelo || !productoObj.detalles) {
+        return alert("El JSON debe contener 'marca', 'modelo' y 'detalles'");
+    }
+
+//--> EN CASO DE NO HABER ERRORES, SE ENVIAR EL PRODUCTO A AGREGAR
 
     // SE CREA EL OBJETO DE CONEXIÓN ASÍNCRONA AL SERVIDOR
     var client = getXMLHttpRequest();
@@ -187,6 +206,11 @@ function agregarProducto(e) {
 
             // SE LISTAN TODOS LOS PRODUCTOS
             listarProductos();
+
+            if (respuesta.status === "success") {
+                //MENSAJE DE EXITO (CONSIDERO AMIGABLE)
+                alert("¡Producto agregado exitosamente!");
+            }
         }
     };
     client.send(productoJsonString);
@@ -194,7 +218,7 @@ function agregarProducto(e) {
 
 // FUNCIÓN CALLBACK DE BOTÓN "Eliminar"
 function eliminarProducto() {
-    if( confirm("De verdad deseas eliinar el Producto") ) {
+    if( confirm("¿De verdad deseas eliminar el Producto?") ) {
         var id = event.target.parentElement.parentElement.getAttribute("productId");
         //NOTA: OTRA FORMA PODRÍA SER USANDO EL NOMBRE DE LA CLASE, COMO EN LA PRÁCTICA 7
 

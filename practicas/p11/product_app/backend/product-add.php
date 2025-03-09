@@ -7,6 +7,7 @@
         'status'  => 'error',
         'message' => 'Ya existe un producto con ese nombre'
     );
+
     if(!empty($producto)) {
         // SE TRANSFORMA EL STRING DEL JASON A OBJETO
         $jsonOBJ = json_decode($producto);
